@@ -10,7 +10,7 @@ const searchButton = document.querySelector('.btn-search');
 const gallery = document.querySelector('.gallery');
 const loadMoreButton = document.querySelector('.btn-more');
 
-const title = document.querySelector('.counter');
+const title = document.querySelector('.counter'); 
 
 let query = '';
 let totalHits = 0;
@@ -18,7 +18,8 @@ let page = 1;
 const perPage = 40;
 
 searchForm.addEventListener('submit', onSearch);
-loadMoreButton.addEventListener('click', onLoadMore);
+loadMoreButton.addEventListener('submit', onLoadMore)
+
 
 function onSearch(e) {
   e.preventDefault();
@@ -47,7 +48,7 @@ function onSearch(e) {
         }
       }
     })
-    .catch(error => console.log(error));
+     .catch(error => console.log(error));
 }
 
 function onLoadMore() {
@@ -62,7 +63,7 @@ function onLoadMore() {
       const totalPages = Math.ceil(data.totalHits / perPage);
 
       if (page === totalPages) {
-        loadMoreButton.classList.add('is-hidden');
+        loadMoreButton.classList.add('is-hidden')
         endOfContent();
       }
     })
