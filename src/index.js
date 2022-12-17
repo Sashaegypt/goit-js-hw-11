@@ -18,7 +18,7 @@ let page = 1;
 const perPage = 40;
 
 searchForm.addEventListener('submit', onSearch);
-loadMoreButton.addEventListener('submit', onLoadMore)
+loadMoreButton.addEventListener('click', onLoadMore)
 
 
 function onSearch(e) {
